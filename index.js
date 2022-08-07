@@ -21,16 +21,16 @@ const operate = (str) => {
 
   switch (operationArr[1]) {
     case "+":
-      return add(parseInt(operationArr[0]), parseInt(operationArr[2]));
+      return add(parseFloat(operationArr[0]), parseFloat(operationArr[2]));
 
     case "-":
-      return subtract(parseInt(operationArr[0]), parseInt(operationArr[2]));
+      return subtract(parseFloat(operationArr[0]), parseFloat(operationArr[2]));
 
     case "*":
-      return multiply(parseInt(operationArr[0]), parseInt(operationArr[2]));
+      return multiply(parseFloat(operationArr[0]), parseFloat(operationArr[2]));
 
     case "/":
-      return divide(parseInt(operationArr[0]), parseInt(operationArr[2]));
+      return divide(parseFloat(operationArr[0]), parseFloat(operationArr[2]));
   }
 };
 
@@ -60,6 +60,7 @@ buttons.forEach((button) => {
 });
 
 equals.addEventListener("click", () => {
+  operationsCount = 0;
   state = JSON.stringify(operate(state));
   operationsDisplay.textContent = state;
 });

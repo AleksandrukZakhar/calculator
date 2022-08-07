@@ -8,24 +8,35 @@
     <title>Calculator</title>
   </head>
   <body>
-    <div class="operations-display"></div>
-    <button class="btn" data-sign="1">1</button>
-    <button class="btn" data-sign="2">2</button>
-    <button class="btn" data-sign="3">3</button>
-    <button class="btn" data-sign="4">4</button>
-    <button class="btn" data-sign="5">5</button>
-    <button class="btn" data-sign="6">6</button>
-    <button class="btn" data-sign="7">7</button>
-    <button class="btn" data-sign="8">8</button>
-    <button class="btn" data-sign="9">9</button>
-    <button class="btn" data-sign="0">0</button>
-    <button class="btn" data-sign=" + ">+</button>
-    <button class="btn" data-sign=" - ">-</button>
-    <button class="btn" data-sign=" * ">x</button>
-    <button class="btn" data-sign=" / ">÷</button>
-    <button class="equals" data-sign="=">=</button>
-    <button class="delete">delete</button>
-    <button class="clear">clear</button>
+    <div class="calculator-container">
+      <div class="operations-display">0</div>
+      <div class="btn-container">
+        <div class="numbers-container">
+          <button class="btn clear operations">AC</button>
+          <button class="btn delete operations">
+            <img src="./assets/backspace.svg" />
+          </button>
+          <button class="btn" data-sign="1">1</button>
+          <button class="btn" data-sign="2">2</button>
+          <button class="btn" data-sign="3">3</button>
+          <button class="btn" data-sign="4">4</button>
+          <button class="btn" data-sign="5">5</button>
+          <button class="btn" data-sign="6">6</button>
+          <button class="btn" data-sign="7">7</button>
+          <button class="btn" data-sign="8">8</button>
+          <button class="btn" data-sign="9">9</button>
+          <button class="btn null" data-sign="0">0</button>
+          <button class="btn" data-sign=".">.</button>
+        </div>
+        <div class="operations-container">
+          <button class="btn operations" data-sign=" + ">+</button>
+          <button class="btn operations" data-sign=" - ">-</button>
+          <button class="btn operations" data-sign=" * ">x</button>
+          <button class="btn operations" data-sign=" / ">÷</button>
+          <button class="btn equals operations" data-sign="=">=</button>
+        </div>
+      </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

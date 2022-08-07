@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+:root {
+    --body-color: hsl(0, 0%, 0%);
+    --numbers-color: hsl(0, 0%, 19%);
+    --operations-color: hsl(37, 95%, 49%);
+    --font-color: hsl(0, 0%, 96%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--font-color);
+    font-size: 1.3rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--body-color);
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.operations-display {
+  width: 270px;
+  height: 100px;
+  font-size: 2rem;
+  text-align: right;
+}
+
+.btn-container {
+  display: flex;
+  gap: 20px;
+}
+
+.numbers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 200px;
+    align-items: flex-end;
+    align-content: flex-end;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--numbers-color);
+    border: 0;
+}
+
+.null {
+    width: 120px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.operations-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.operations {
+    background-color: var(--operations-color);
+}
+
+.delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.delete > img {
+    width: 40px;
+    height: 40px;
+}
+
+.clear {
+    width: 120px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
