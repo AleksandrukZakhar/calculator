@@ -1,7 +1,11 @@
 const operationsDisplay = document.querySelector(".operations-display");
 const buttons = document.querySelectorAll(".btn");
 const equals = document.querySelector(".equals");
+const deleteBtn = document.querySelector(".delete");
+const clear = document.querySelector(".clear");
+
 let state = "";
+let operationsCount = 0;
 
 const add = (...nums) => [...nums].reduce((acum, curr) => (acum += curr));
 
@@ -32,12 +36,42 @@ const operate = (str) => {
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    state += button.dataset.sign;
-    operationsDisplay.textContent = state;
+    switch (button.dataset.sign) {
+      case " + ":
+      case " - ":
+      case " * ":
+      case " / ":
+        operationsCount += 1;
+        break;
+    }
+
+    switch (operationsCount) {
+      case 2:
+        operationsCount -= 1;
+        state = JSON.stringify(operate(state)) + button.dataset.sign;
+        operationsDisplay.textContent = state;
+        break;
+
+      default:
+        state += button.dataset.sign;
+        operationsDisplay.textContent = state;
+    }
   });
 });
 
 equals.addEventListener("click", () => {
   state = JSON.stringify(operate(state));
+  operationsDisplay.textContent = state;
+});
+
+deleteBtn.addEventListener("click", () => {
+  const stateArr = state.split("");
+  stateArr.pop();
+  state = stateArr.join("");
+  operationsDisplay.textContent = state;
+});
+
+clear.addEventListener("click", () => {
+  state = "";
   operationsDisplay.textContent = state;
 });
